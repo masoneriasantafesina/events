@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Masonería y Vinos | Primera Edición</title>
+  <meta name="description" content="Masonería y Vinos. Jueves 17 de septiembre, 20 hs. Evento privado con inscripción. Cupos limitados.">
+  <style>
+    :root{
+      --bg:#05080c; --panel:#0a1017; --ink:#f3efe6; --muted:#b8b1a5;
+      --gold:#c89a45; --gold2:#e0bd72; --wine:#7c1835; --line:rgba(210,169,89,.28);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    .wrap{width:min(1120px,calc(100% - 38px));margin:auto}
+    .nav{position:absolute;z-index:20;left:0;right:0;top:0;padding:24px 0}
+    .nav .wrap{display:flex;align-items:center;justify-content:space-between}
+    .nav img{width:210px;max-width:46vw;filter:drop-shadow(0 4px 12px #000)}
+    .nav a.cta{border:1px solid var(--gold);padding:11px 18px;border-radius:999px;font-size:12px;letter-spacing:.15em;text-transform:uppercase}
+    .hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;background:#07101a}
+    .hero:before{content:"";position:absolute;inset:0;background:
+      linear-gradient(90deg,rgba(2,5,9,.96) 0%,rgba(2,5,9,.75) 43%,rgba(2,5,9,.28) 73%,rgba(2,5,9,.60) 100%),
+      linear-gradient(0deg,#05080c 0%,transparent 30%),
+      url('templo.jpg') center/cover no-repeat}
+    .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .58fr;align-items:end;gap:42px;padding:130px 0 80px}
+    .eyebrow{color:var(--gold2);text-transform:uppercase;letter-spacing:.32em;font-size:12px;font-weight:bold;margin-bottom:20px}
+    h1,h2,h3{font-family:Georgia,'Times New Roman',serif}
+    h1{font-size:clamp(54px,8vw,102px);line-height:.87;margin:0;letter-spacing:-.045em;font-weight:normal}
+    h1 span{display:block;color:var(--gold2)}
+    .hero p{font-family:Georgia,'Times New Roman',serif;font-size:20px;color:#e5dfd4;max-width:700px;margin:26px 0 0}
+    .meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin:30px 0;color:#ddd4c6;font-size:14px}
+    .meta span:before{content:"◆";color:var(--gold);font-size:8px;margin-right:9px}
+    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;min-height:50px;padding:0 24px;border-radius:3px;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:bold}
+    .btn.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#0a0a0a}
+    .btn.secondary{border:1px solid rgba(255,255,255,.35)}
+    .bottle{align-self:end;justify-self:center;width:min(320px,34vw);filter:drop-shadow(0 30px 30px rgba(0,0,0,.72));transform:translateY(25px)}
+    section{padding:96px 0}
+    .head{max-width:760px;margin-bottom:48px}
+    .kicker{color:var(--gold);font-size:11px;text-transform:uppercase;letter-spacing:.28em;font-weight:bold;margin-bottom:10px}
+    h2{font-weight:normal;font-size:clamp(40px,5vw,64px);line-height:1;margin:0}
+    .lead{color:var(--muted);font-size:18px;margin-top:20px}
+    .paths{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .path{padding:34px 30px 32px;border:1px solid rgba(255,255,255,.07);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));min-height:330px}
+    .num{font-family:Georgia,serif;color:var(--gold);font-size:32px;margin-bottom:34px}
+    .path h3{font-size:30px;font-weight:normal;margin:0 0 8px}
+    .path .tag{color:var(--gold2);text-transform:uppercase;letter-spacing:.12em;font-size:11px;margin-bottom:18px}
+    .path p{color:var(--muted);margin:0}
+    .intimo{border-color:rgba(200,154,69,.38);background:radial-gradient(circle at 90% 0%,rgba(124,24,53,.16),transparent 35%),rgba(255,255,255,.025)}
+    .velada{position:relative;background:#080d13}
+    .velada:before{content:"";position:absolute;inset:0;background:
+      linear-gradient(90deg,rgba(5,8,12,.97),rgba(5,8,12,.84) 52%,rgba(5,8,12,.54)),
+      url('templo.jpg') center/cover no-repeat;opacity:.55}
+    .velada .wrap{position:relative}
+    .vel-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+    .quote{font-family:Georgia,serif;font-size:30px;line-height:1.25;border-left:2px solid var(--gold);padding-left:25px;margin:32px 0}
+    .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .fact{border-top:1px solid var(--line);padding:18px 4px}
+    .fact strong{display:block;font-family:Georgia,serif;font-size:23px;font-weight:normal}
+    .fact span{color:var(--muted);font-size:13px}
+    .wine-card{background:linear-gradient(145deg,#111820,#070a0e);border:1px solid var(--line);padding:38px;display:grid;grid-template-columns:.7fr 1fr;gap:26px;align-items:center}
+    .wine-card img{width:100%;max-height:430px;object-fit:contain;filter:drop-shadow(0 20px 25px #000)}
+    .wine-card h3{font-size:35px;margin:0 0 10px;font-weight:normal}
+    .wine-card p{color:var(--muted)}
+    .ticket{background:radial-gradient(circle at 80% 20%,rgba(124,24,53,.18),transparent 30%),#070a0e}
+    .ticket-box{border:1px solid var(--line);padding:45px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+    .ticket-box h2{font-size:54px}
+    .price{text-align:right}
+    .price strong{font-family:Georgia,serif;color:var(--gold2);font-size:66px;font-weight:normal;display:block;line-height:1}
+    .price span{font-size:12px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted)}
+    .small{font-size:13px;color:var(--muted);margin-top:14px}
+    footer{padding:42px 0;border-top:1px solid rgba(255,255,255,.06);color:#918b82;font-size:12px}
+    footer .wrap{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    footer img{width:170px;opacity:.8}
+    @media(max-width:800px){
+      .nav a.cta{display:none}.nav img{width:175px}
+      .hero .wrap,.vel-grid{grid-template-columns:1fr}
+      .hero .wrap{padding-top:150px}.bottle{width:210px;max-width:none;justify-self:end;margin-top:-50px;opacity:.92}
+      .paths{grid-template-columns:1fr}.wine-card{grid-template-columns:.6fr 1fr}.ticket-box{grid-template-columns:1fr}.price{text-align:left}
+    }
+    @media(max-width:520px){
+      .hero p{font-size:17px}.bottle{width:170px}.wine-card{grid-template-columns:1fr}.wine-card img{height:300px}
+      .facts{grid-template-columns:1fr}.ticket-box{padding:28px}.price strong{font-size:52px}footer .wrap{align-items:flex-start;flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap">
+      <img src="logo-masoneria.png" alt="Masonería Santafesina">
+      <a class="cta" href="#inscripcion">Inscripción</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow">Cupos limitados · Primera edición</div>
+        <h1>Masonería <span>y Vinos</span></h1>
+        <p>Una noche para conocer el vino, acercarse a la historia y los símbolos de la Masonería y, sobre todo, conversar sin intermediarios.</p>
+        <div class="meta">
+          <span>Jueves 17 de septiembre</span>
+          <span>20 hs</span>
+          <span>Evento privado con inscripción</span>
+        </div>
+        <div class="buttons">
+          <a class="btn primary" href="#inscripcion">Quiero participar</a>
+          <a class="btn secondary" href="#experiencia">Descubrir la experiencia</a>
+        </div>
+      </div>
+      <img class="bottle" src="vino-virtuoso.jpg" alt="Vino Virtuoso - Finca La Seis">
+    </div>
+  </header>
+
+  <section id="experiencia">
+    <div class="wrap">
+      <div class="head">
+        <div class="kicker">La experiencia</div>
+        <h2>Tres caminos. Una misma mesa.</h2>
+        <p class="lead">Una experiencia pensada para acercarse a la Masonería de una manera distinta: con una copa de vino, tiempo para conversar y la posibilidad de preguntar aquello que siempre quisiste saber.</p>
+      </div>
+      <div class="paths">
+        <article class="path">
+          <div class="num">01</div>
+          <h3>Vino</h3>
+          <div class="tag">Conocer una expresión</div>
+          <p>Descubriremos la línea Virtuoso de Finca La Seis, Bodega La Macarena, aprendiendo sobre el vino mientras lo degustamos y dejamos que la copa acompañe la conversación.</p>
+        </article>
+        <article class="path">
+          <div class="num">02</div>
+          <h3>Símbolos e historia</h3>
+          <div class="tag">Conocer un legado</div>
+          <p>Un acercamiento accesible a la historia de la Masonería, sus símbolos, sus ideas y la forma en que una tradición de siglos continúa dialogando con el presente.</p>
+        </article>
+        <article class="path intimo">
+          <div class="num">03</div>
+          <h3>Entre preguntas</h3>
+          <div class="tag">Un masón. Una conversación.</div>
+          <p>El corazón de la noche: un encuentro cercano, mesa de por medio, para conversar con masones, preguntar con libertad y conocer la institución desde quienes la viven. Sin discursos prefabricados. Con tiempo para escuchar y ser escuchado.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="velada">
+    <div class="wrap vel-grid">
+      <div>
+        <div class="kicker">La velada</div>
+        <h2>Elegante, íntima y cuidadosamente pensada.</h2>
+        <p class="lead">No es una ceremonia masónica ni una conferencia. Es un encuentro cultural y social, abierto a quienes tengan curiosidad genuina por conocer más.</p>
+        <div class="quote">“Cada conversación puede ser la llave que abra una nueva perspectiva.”</div>
+        <div class="facts">
+          <div class="fact"><strong>Jueves 17 de septiembre</strong><span>Fecha</span></div>
+          <div class="fact"><strong>20 hs</strong><span>Inicio</span></div>
+          <div class="fact"><strong>2 horas aprox.</strong><span>Duración de la experiencia</span></div>
+          <div class="fact"><strong>Evento privado</strong><span>Ingreso únicamente con inscripción previa</span></div>
+        </div>
+      </div>
+
+      <div class="wine-card">
+        <img src="vino-virtuoso.jpg" alt="Virtuoso de Finca La Seis">
+        <div>
+          <div class="kicker">El vino de la noche</div>
+          <h3>Virtuoso</h3>
+          <p>Presentando en esta ocasión la línea Virtuoso de Finca La Seis, Bodega La Macarena.</p>
+          <p>El vino no será un acompañamiento: será uno de los lenguajes de la experiencia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ticket" id="inscripcion">
+    <div class="wrap">
+      <div class="ticket-box">
+        <div>
+          <div class="kicker">Primera edición · Cupos limitados</div>
+          <h2>Tu lugar en la mesa.</h2>
+          <p class="lead">La participación requiere inscripción previa. Los lugares son limitados para preservar el carácter íntimo de la experiencia.</p>
+          <!-- Reemplazá # por la URL definitiva de Google Forms -->
+          <a class="btn primary" href="#">Quiero participar</a>
+          <div class="small">Al continuar podrás completar tus datos para solicitar tu lugar.</div>
+        </div>
+        <div class="price">
+          <span>Valor por persona</span>
+          <strong>$50.000</strong>
+          <span>Evento privado con inscripción</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <img src="logo-masoneria.png" alt="Masonería Santafesina">
+      <div>Masonería y Vinos · Primera edición · Santa Fe</div>
+    </div>
+  </footer>
+</body>
+</html>
